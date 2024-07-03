@@ -38,11 +38,5 @@ class Comparator:
             "only_in_second": only_in_second,
         }
 
-    def process(self):
-        ...
-
-    def results(self):
-        ...
-
     def __str__(self) -> None:
         return self.__class__.__name__

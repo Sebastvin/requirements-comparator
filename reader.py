@@ -26,4 +26,4 @@ class ContextManager:
 
         # TODO handle repos installed via github @
 
-        return Package(name=line)
+        return Package(name=line, version="")
