@@ -1,6 +1,6 @@
 from typing import List
 from dataclasses import dataclass
-from backend.src.models.schemas import Package
+from src.models.schemas import Package
 
 
 @dataclass

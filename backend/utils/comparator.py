@@ -1,6 +1,6 @@
 from typing import List, Dict
 from dataclasses import dataclass
-from schemas import Package
+from src.models.schemas import Package
 
 
 @dataclass
