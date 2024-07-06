@@ -20,10 +20,15 @@ class ContextManager:
         if not line or line.startswith("#"):
             return None
 
+        # Handle Git repository packages
+        if "@" in line and "git+" in line:
+            parts = line.split("@")
+            name = parts[0].strip()
+            return Package(name=name, version="")
+
+        # Handle regular packages with versions
         if "==" in line:
             name, version = line.split("==")
             return Package(name=name.strip(), version=version.strip())
-
-        # TODO handle repos installed via github @
 
         return Package(name=line, version="")
