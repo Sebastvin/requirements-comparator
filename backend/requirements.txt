@@ -1,5 +1,6 @@
 fastapi
 fastapi-cors
+uvicorn
 pytest
 pytest-cov
 pytest-mock
