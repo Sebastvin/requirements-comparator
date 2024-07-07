@@ -1,6 +1,6 @@
 from fastapi import APIRouter, File, UploadFile, HTTPException
-from services.comparison_service import compare_requirements
-from models.schemas import ComparisonResult
+from src.services.comparison_service import compare_requirements
+from src.models.schemas import ComparisonResult
 import logging
 
 router = APIRouter()

@@ -1,6 +1,6 @@
 import pytest
-from backend.src.reader import ContextManager
-from backend.src.models.schemas import Package
+from src.utils.context_manager import ContextManager
+from src.models.schemas import Package
 from unittest.mock import patch, mock_open
 
 

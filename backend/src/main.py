@@ -1,5 +1,5 @@
 from fastapi import FastAPI, File, UploadFile
-from api.endpoints import router as api_router
+from src.api.endpoints import router as api_router
 
 app = FastAPI()
 

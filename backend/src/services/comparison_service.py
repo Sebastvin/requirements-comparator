@@ -1,7 +1,7 @@
 from fastapi import UploadFile
-from models.schemas import ComparisonResult, Package
-from utils.context_manager import ContextManager
-from utils.comparator import Comparator
+from src.models.schemas import ComparisonResult, Package
+from src.utils.context_manager import ContextManager
+from src.utils.comparator import Comparator
 import tempfile
 import os
 
