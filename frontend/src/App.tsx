@@ -2,13 +2,25 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  interface Package {
+    name: string;
+    version: string;
+  }
+  
+  interface ComparisonResult {
+    same: Package[];
+    different: [Package, Package][];
+    only_in_first: Package[];
+    only_in_second: Package[];
+  }
+
   const [file1, setFile1] = useState<File | null>(null);
   const [file2, setFile2] = useState<File | null>(null);
-  const [result, setResult] = useState<string | null>(null);
+  const [result, setResult] = useState<ComparisonResult | null>(null);
 
   const compareRequirements = async () => {
     if (!file1 || !file2) {
-      setResult('Please select both files before comparing.');
+      alert('Please select both files before comparing.');
       return;
     }
 
@@ -24,11 +36,11 @@ function App() {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      const data = await response.text();
+      const data: ComparisonResult = await response.json();
       setResult(data);
     } catch (error) {
       console.error('Error:', error);
-      setResult(`An error occurred while fetching the data: ${error}`);
+      alert(`An error occurred while fetching the data: ${error}`);
     }
   };
 
@@ -78,7 +90,34 @@ function App() {
                   </tr>
                 </thead>
                 <tbody>
-                  {/* Render your results here */}
+                  {/* Same packages */}
+                  {result.same.map((pkg: any, index: number) => (
+                    <tr key={`same-${index}`}>
+                      <td>{pkg.name} {pkg.version}</td>
+                      <td>{pkg.name} {pkg.version}</td>
+                    </tr>
+                  ))}
+                  {/* Different packages */}
+                  {result.different.map((pkg: any, index: number) => (
+                    <tr key={`diff-${index}`}>
+                      <td>{pkg[0].name} {pkg[0].version}</td>
+                      <td>{pkg[1].name} {pkg[1].version}</td>
+                    </tr>
+                  ))}
+                  {/* Only in first file */}
+                  {result.only_in_first.map((pkg: any, index: number) => (
+                    <tr key={`first-${index}`}>
+                      <td>{pkg.name} {pkg.version}</td>
+                      <td>None</td>
+                    </tr>
+                  ))}
+                  {/* Only in second file */}
+                  {result.only_in_second.map((pkg: any, index: number) => (
+                    <tr key={`second-${index}`}>
+                      <td>None</td>
+                      <td>{pkg.name} {pkg.version}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
