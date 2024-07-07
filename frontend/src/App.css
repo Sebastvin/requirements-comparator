@@ -90,6 +90,9 @@ main {
   max-width: 400px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .upload-card:hover {

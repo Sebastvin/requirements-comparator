@@ -69,12 +69,12 @@ function App() {
       <main>
         <div className="upload-section">
           <div className="upload-card">
-            <h3>Left requirements</h3>
+            <h3>Base Requirements</h3>
             <input type="file" onChange={(e) => handleFileChange(e, setFile1)} />
             {file1 && <p>Selected file: {file1.name}</p>}
           </div>
           <div className="upload-card">
-            <h3>Right requirements</h3>
+            <h3>Comparison Requirements</h3>
             <input type="file" onChange={(e) => handleFileChange(e, setFile2)} />
             {file2 && <p>Selected file: {file2.name}</p>}
           </div>
