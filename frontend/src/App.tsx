@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
 import './App.css';
+
 
 function App() {
   interface Package {
@@ -130,7 +134,17 @@ function App() {
       </main>
 
       <footer>
-        <p>© 2024 Python Requirements Comparison Tool. All rights reserved.</p>
+        <p>
+          © 2024 Python Requirements Comparison Tool. 
+          <a 
+            href="https://github.com/Sebastvin" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{ marginLeft: '10px', color: 'inherit', textDecoration: 'none' }}
+          >
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
+        </p>
       </footer>
     </div>
   );
