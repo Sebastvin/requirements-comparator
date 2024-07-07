@@ -41,24 +41,54 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Requirements Comparison</h1>
-      <div>
-        <h2>Requirement 1</h2>
-        <input type="file" onChange={(e) => handleFileChange(e, setFile1)} />
-        {file1 && <p>Selected file: {file1.name}</p>}
-      </div>
-      <div>
-        <h2>Requirement 2</h2>
-        <input type="file" onChange={(e) => handleFileChange(e, setFile2)} />
-        {file2 && <p>Selected file: {file2.name}</p>}
-      </div>
-      <button onClick={compareRequirements}>Compare</button>
-      {result && (
-        <div className="result">
-          <h3>Comparison Result:</h3>
-          <pre>{result}</pre>
+      <nav>
+        <div className="navbar">
+          <h1>Python Requirements Comparison</h1>
         </div>
-      )}
+      </nav>
+
+      <header className="App-header">
+        <h2>Compare Your Requirements Files</h2>
+        <p>This tool allows you to compare two requirements documents to find differences and similarities.</p>
+      </header>
+
+      <main>
+        <div className="upload-section">
+          <div className="upload">
+            <h3>Requirement 1</h3>
+            <input type="file" onChange={(e) => handleFileChange(e, setFile1)} />
+            {file1 && <p>Selected file: {file1.name}</p>}
+          </div>
+          <div className="upload">
+            <h3>Requirement 2</h3>
+            <input type="file" onChange={(e) => handleFileChange(e, setFile2)} />
+            {file2 && <p>Selected file: {file2.name}</p>}
+          </div>
+        </div>
+        <button onClick={compareRequirements}>Compare</button>
+        {result && (
+          <div className="result">
+            <h3>Comparison Result:</h3>
+            <div className="result-tables">
+              <table>
+                <thead>
+                  <tr>
+                    <th>File 1</th>
+                    <th>File 2</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {/* Render your results here */}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+      </main>
+
+      <footer>
+        <p>© 2024 Python Requirements Comparison Tool. All rights reserved.</p>
+      </footer>
     </div>
   );
 }
