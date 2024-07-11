@@ -6,3 +6,5 @@ services:
       - ./src:/code/src
     ports:
       - 8000:8000
+    env_file:
+      - .env
