@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
+
 import './App.css';
 
 
@@ -33,7 +34,7 @@ function App() {
     formData.append('file2', file2);
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/compare', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/compare`, {
         method: 'POST',
         body: formData,
       });
