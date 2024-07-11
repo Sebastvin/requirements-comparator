@@ -58,9 +58,9 @@ function App() {
   return (
     <div className="App">
       <div className="hero-section">
-        <nav className="navbar">
-          <h1>Python Requirements Comparison</h1>
-        </nav>
+      <nav className="navbar">
+        <img src="/snake.png" alt="Python Requirements Comparison" className="navbar-logo" />
+      </nav>
         <header className="App-header">
           <h2>Compare Your Requirements Files</h2>
           <p>

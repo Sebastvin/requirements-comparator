@@ -41,6 +41,12 @@ main {
   flex-direction: column;
 }
 
+
+/* Navabar section */
+.navbar-logo {
+  height: 180px;
+}
+
 /* Hero section */
 .hero-section {
   background: linear-gradient(135deg, var(--navbar-gradient-start) 0%, var(--navbar-gradient-end) 100%);
