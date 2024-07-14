@@ -25,3 +25,7 @@ This project uses a monorepo architecture, which means all related projects and 
 - [ ] Improve error handling (mainly frontend)
 - [ ] Write more unit tests
 - [ ] Set up GA pipeline
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
