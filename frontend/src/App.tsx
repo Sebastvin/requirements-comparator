@@ -138,7 +138,7 @@ function App() {
         <p>
           © 2024 Python Requirements Comparison Tool. 
           <a 
-            href="https://github.com/Sebastvin" 
+            href="https://github.com/Sebastvin/requirements-comparator" 
             target="_blank" 
             rel="noopener noreferrer"
             style={{ marginLeft: '10px', color: 'inherit', textDecoration: 'none' }}
