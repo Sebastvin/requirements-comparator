@@ -143,7 +143,7 @@ function App() {
             rel="noopener noreferrer"
             style={{ marginLeft: '10px', color: 'inherit', textDecoration: 'none' }}
           >
-            <FontAwesomeIcon icon={faGithub} />
+            Feel free to contribute <FontAwesomeIcon icon={faGithub} />
           </a>
         </p>
       </footer>
